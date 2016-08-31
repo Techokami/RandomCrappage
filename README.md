@@ -1,2 +1,4 @@
 # RandomCrappage
 Random things of a code-y nature.
+
+#IF IT DOESN'T SPECIFY A LICENSE IN THE FILE, THE LICENSE FILE IN THE ROOT OF THIS REPO APPLIES
