@@ -93,6 +93,8 @@ namespace GSPalConv
 				return;
 			}
 			
+			br.ReadBytes(offset);
+			
 			//create the output file
 			try
 			{
