@@ -1,0 +1,117 @@
+-------------------------
+Sonic Advance 2 Addresses
+-------------------------
+
+These are a bunch of addresses in the ROM I have 
+identified while making a script that extracts the 
+96x96 mapping data from the ROM.
+
+LEAF FOREST ZONE 1
+Pallete			0x6E9E08
+8x8 Tiles		0x6EA008
+96x96 Mappings	0x6F33D0
+
+LEAF FOREST ZONE 2
+Pallete			0x71459C
+8x8 Tiles		0x71479C
+96x96 Mappings	0x71D474
+
+LEAF FOREST ZONE 3
+Pallete			0x73A438
+8x8 Tiles		0x73A638
+96x96 Mappings	0x73B844
+
+HOT CRATER ZONE 1
+Pallete			0x73CCB0
+8x8 Tiles		0x73CEB0
+96x96 Mappings	0x74541C
+
+HOT CRATER ZONE 2
+Pallete			0x763AA0
+8x8 Tiles		0x763CA0
+96x96 Mappings	0x76C690
+
+HOT CRATER ZONE 3
+Pallete			0x78FEBC
+8x8 Tiles		0x7900BC
+96x96 Mappings	0x7913EC
+
+MUSIC PLANT ZONE 1
+Pallete			0x79279C
+8x8 Tiles		0x79299C
+96x96 Mappings	0x79BEFC
+
+MUSIC PLANT ZONE 2
+Pallete			0x7B8E80
+8x8 Tiles		0x7B9080
+96x96 Mappings	0x7C20E0
+
+MUSIC PLANT ZONE 3
+Pallete			0x7DB79C
+8x8 Tiles		0x7DB99C
+96x96 Mappings	0x7DC5DC
+
+ICE PARADISE ZONE 1
+Pallete			0x7DCB88
+8x8 Tiles		0x7DCD88
+96x96 Mappings	0x7E5E90
+
+ICE PARADISE ZONE 2
+Pallete			0x80C594
+8x8 Tiles		0x80C794
+96x96 Mappings	0x8152A4
+
+ICE PARADISE ZONE 3
+Pallete			0x834450
+8x8 Tiles		0x834650
+96x96 Mappings	0x835218
+
+SKY CANYON ZONE 1
+Pallete			0x835DDC
+8x8 Tiles		0x835FDC
+96x96 Mappings	0x83CCF8
+
+SKY CANYON ZONE 2
+Pallete			0x85DB74
+8x8 Tiles		0x85DD74
+96x96 Mappings	0x864CA8
+
+SKY CANYON ZONE 3
+Pallete			0x885AB4
+8x8 Tiles		0x885CB4
+96x96 Mappings	0x88675C
+
+TECHNO BASE ZONE 1
+Pallete			0x8876F8
+8x8 Tiles		0x8878F8
+96x96 Mappings	0x88CF30
+
+TECHNO BASE ZONE 2
+Pallete			0x8A9194
+8x8 Tiles		0x8A9394
+96x96 Mappings	0x8AE210
+
+TECHNO BASE ZONE 3
+Pallete			0x8C269C
+8x8 Tiles		0x8C289C
+96x96 Mappings	0x8C4860
+
+EGG UTOPIA ZONE 1
+Pallete			0x8C5724
+8x8 Tiles		0x8C5924
+96x96 Mappings	0x8CD8C4
+
+EGG UTOPIA ZONE 2
+Pallete			0x8F7DD0
+8x8 Tiles		0x8F7FD0
+96x96 Mappings	0x900090
+
+EGG UTOPIA ZONE 3
+Pallete			0x924E80
+8x8 Tiles		0x925080
+96x96 Mappings	0x9256CC
+
+XX ZONE
+Pallete			0x925CF0
+8x8 Tiles		0x925EF0
+96x96 Mappings	0x9290E8

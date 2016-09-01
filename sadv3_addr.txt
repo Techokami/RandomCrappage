@@ -1,0 +1,64 @@
+-------------------------
+Sonic Advance 3 Addresses
+-------------------------
+
+These are a bunch of addresses in the ROM I have 
+identified while making a script that extracts the 
+96x96 mapping data from the ROM.
+
+ROUTE 99
+Pallete			0x358650
+8x8 Tiles		0x358850
+96x96 Mappings	0x362D50
+
+SONIC FACTORY & CHAO GARDEN
+Pallete			0x3946D0
+8x8 Tiles		0x3948D0
+96x96 Mappings	0x3A4D8C
+
+MINIGAMES & ZONE MAP (1)
+Pallete			0x3A9F40
+8x8 Tiles		0x3AA140
+96x96 Mappings	0x3B4640
+
+SUNSET HILL
+Pallete			0x3FCC84
+8x8 Tiles		0x3FCE84
+96x96 Mappings	0x407384
+
+OCEAN BASE
+Pallete			0x4588BC
+8x8 Tiles		0x458ABC
+96x96 Mappings	0x462FBC
+
+TOY KINGDOM
+Pallete			0x491638
+8x8 Tiles		0x491838
+96x96 Mappings	0x49C260
+
+TWINKLE SNOW
+Pallete			0x4CCC38
+8x8 Tiles		0x4CCE38
+96x96 Mappings	0x4D7A50
+
+CYBER TRACK
+Pallete			0x50CAD4
+8x8 Tiles		0x50CCD4
+96x96 Mappings	0x51AA3C
+
+CHAOS ANGEL
+Pallete			0x56D224
+8x8 Tiles		0x56D424
+96x96 Mappings	0x579438
+
+ALTAR EMERALD
+Pallete			0x5B07E0
+8x8 Tiles		0x5B09E0
+96x96 Mappings	0x5BC330
+
+SUNSET HILL VS MODE
+Pallete			0x5CABC0
+8x8 Tiles		0x5CADC0
+96x96 Mappings	0x5D52C0
+
+(1) The listed pallete is for the minigame stages.  For the zone maps, use the desired zone's pallete. (i.e. use the pallete listed for Ocean Base to get the Ocean Base Map)
