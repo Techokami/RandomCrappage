@@ -13,8 +13,8 @@ namespace GSPalConv
 			//Arguments stuff
 			if (args.Length == 0)
 			{
-				System.Console.WriteLine("Genesis Standard Palette Converter - converts 0BGR palette data into RRGGBB data, perfect for YY-CHR!");
-				System.Console.WriteLine("Usage: GSPalConv <filename> [output = out.pal] [offset = 0 (give a hex value without a prefix)] [lines = 1]");
+				System.Console.WriteLine("Genesis Standard Palette Converter: converts 0BGR palette data into RRGGBB data \n Perfect for YY-CHR! \n Gens/Genecyst/Dgen savestate autodetection included.");
+				System.Console.WriteLine("Usage: GSPalConv <filename> [offset = 0 (give a hex value without a prefix)] [lines = 1] [output = filename.pal]");
 				return;
 			}
 			
@@ -24,6 +24,7 @@ namespace GSPalConv
 			int offset;
 			int lines;
 			bool test = false;
+			bool endian = false;
 			byte red;
 			byte green;
 			byte blue;
@@ -34,17 +35,18 @@ namespace GSPalConv
 			infile = args[0];
 			
 			//Output file
-			if (args.Length >= 2)
+			if (args.Length >= 4)
 			{
-				outfile = args[1];
+				outfile = args[3];
 			}
 			else
 			{
-				outfile = "out.pal";
+				string[] words = args[0].Split('.');
+				outfile = words[0] + ".pal";
 			}
 			
 			//Palette data offset (why do some games put this data in different places? Default is for working with disassembly files)
-			if (args.Length >= 3)
+			if (args.Length >= 2)
 			{
 				offset = Int32.Parse(args[2], System.Globalization.NumberStyles.HexNumber);
 			}
@@ -53,8 +55,8 @@ namespace GSPalConv
 				offset = 0;
 			}
 			
-			//Make sure this last argument is a number...
-			if (args.Length >= 4)
+			//Make sure this argument is a number...
+			if (args.Length >= 3)
 			{
 				test = int.TryParse(args[3], out lines);
 			}
@@ -93,6 +95,24 @@ namespace GSPalConv
 				return;
 			}
 			
+			//If we weren't given any other parameters aside from filename, let's check to see if this is a savestate.
+			if(args.Length == 1)
+			{
+				//At the start of the file, there is a three-char magic: GST
+				char[] magic = br.ReadChars(3);
+				string magics = new string(magic);
+				if (magics == "GST")
+				{
+					Console.WriteLine("Detected savestate format: " + magics);
+					lines = 4;
+					offset = Int32.Parse("112", System.Globalization.NumberStyles.HexNumber);
+					endian = true;
+				}
+				//Please be kind! Rewind.
+				br.BaseStream.Seek(0, SeekOrigin.Begin);
+			}
+			
+			
 			br.ReadBytes(offset);
 			
 			//create the output file
@@ -109,9 +129,19 @@ namespace GSPalConv
 			//The main event!
 			for (int i = 0; i < (lines * 16); i++)
 			{
-				color1 = br.ReadByte();
-				color2 = br.ReadByte();
-				// Genesis pallete entries are words - 0B GR
+				if (!endian)
+				{
+					// Genesis pallete entries are words - 0B GR
+					color1 = br.ReadByte();
+					color2 = br.ReadByte();
+				}
+				else
+				{
+					//But GST files store them as GR 0B. ENDIANS!!!
+					color2 = br.ReadByte();
+					color1 = br.ReadByte();
+				}
+				
 				red = Convert.ToByte(17 * (color2 % 16));
 				green = Convert.ToByte(17 * Math.Floor(color2 / 16f));
 				blue = Convert.ToByte(17 * (color1 % 16));
