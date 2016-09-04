@@ -58,7 +58,7 @@ namespace GSPalConv
 			//Make sure this argument is a number...
 			if (args.Length >= 3)
 			{
-				test = int.TryParse(args[3], out lines);
+				test = int.TryParse(args[2], out lines);
 			}
 			else
 			{
