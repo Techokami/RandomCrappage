@@ -48,7 +48,7 @@ namespace GSPalConv
 			//Palette data offset (why do some games put this data in different places? Default is for working with disassembly files)
 			if (args.Length >= 2)
 			{
-				offset = Int32.Parse(args[2], System.Globalization.NumberStyles.HexNumber);
+				offset = Int32.Parse(args[1], System.Globalization.NumberStyles.HexNumber);
 			}
 			else
 			{
@@ -112,8 +112,8 @@ namespace GSPalConv
 				br.BaseStream.Seek(0, SeekOrigin.Begin);
 			}
 			
-			
-			br.ReadBytes(offset);
+			br.BaseStream.Seek(offset, SeekOrigin.Begin);
+			//br.ReadBytes(offset);
 			
 			//create the output file
 			try
